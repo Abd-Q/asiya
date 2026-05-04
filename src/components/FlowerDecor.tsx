@@ -5,10 +5,10 @@
 
 const SHOW_DECOR = true;
 
-const FLOWER_IMAGE = "public/assets/source/product-2.png";
-const LEAF_IMAGE = "public/assets/source/product-1.png";
-const MIX_IMAGE = "public/assets/source/product-3.png";
-const LAVENDER_IMAGE = "public/assets/source/product-4.png";
+const FLOWER_IMAGE = "public/assets/product-2.png";
+const LEAF_IMAGE = "public/assets/product-1.png";
+const MIX_IMAGE = "public/assets/product-3.png";
+const LAVENDER_IMAGE = "public/assets/product-4.png";
 
 const HERO_FLOWERS = [
   { image: LEAF_IMAGE, top: 30, left: -80, width: 260, opacity: 0.18, rotate: -18 },
