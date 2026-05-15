@@ -15,32 +15,33 @@ import ContactsPage from "./pages/ContactsPage";
 function AppContent() {
   const { page } = useRouter();
   return (
-    <>
-      <Header />
-      <main className="app-main">
-        {page === "home" && <HomePage />}
-        {page === "about" && <AboutPage />}
-        {page === "why" && <WhyPage />}
-        {page === "catalog" && <CatalogPage />}
-        {page === "product" && <ProductPage />}
-        {page === "news" && <NewsPage />}
-        {page === "newsDetail" && <NewsDetailPage />}
-        {page === "contacts" && <ContactsPage />}
-      </main>
-      <Footer />
-      <ScrollToTop />
-      <style>{`
+      <>
+          <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"/>
+          <Header/>
+          <main className="app-main">
+              {page === "home" && <HomePage/>}
+              {page === "about" && <AboutPage/>}
+              {page === "why" && <WhyPage/>}
+              {page === "catalog" && <CatalogPage/>}
+              {page === "product" && <ProductPage/>}
+              {page === "news" && <NewsPage/>}
+              {page === "newsDetail" && <NewsDetailPage/>}
+              {page === "contacts" && <ContactsPage/>}
+          </main>
+          <Footer/>
+          <ScrollToTop/>
+          <style>{`
         .app-main{min-height:100vh;overflow:hidden}
       `}</style>
-    </>
+      </>
   );
 }
 
 export default function App() {
-  return (
-    <I18nProvider>
-      <RouterProvider>
-        <AppContent />
+    return (
+        <I18nProvider>
+            <RouterProvider>
+            <AppContent />
       </RouterProvider>
     </I18nProvider>
   );

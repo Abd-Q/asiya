@@ -9,7 +9,7 @@ const CATALOG_COLUMNS = 6;
 const CATALOG_GAP = 16;
 const PAGE_BG = "#f6efde";
 const CARD_GRID_MAX_WIDTH = 1320;
-const SECTION_PADDING = "70px 28px";
+const SECTION_PADDING = "0px 28px";
 
 export default function CatalogPage() {
   const { t } = useI18n();
@@ -70,7 +70,7 @@ const styles: Record<string, React.CSSProperties> = {
   page: { position: "relative", overflow: "hidden", padding: SECTION_PADDING, minHeight: "100vh" },
   hero: { position: "relative", zIndex: 2, maxWidth: 1320, margin: "0 auto", padding: "54px 0 46px" },
   tag: { margin: "0 0 12px", color: "#657447", fontSize: 12, fontWeight: 900, textTransform: "uppercase", letterSpacing: 2 },
-  title: { maxWidth: 720, margin: 0, color: "#25301f", fontSize: 58, lineHeight: 1.05, fontWeight: 900, letterSpacing: -1.8 },
+  title: { maxWidth: 720, margin: 0, color: "#25301f", fontSize: 58, lineHeight: 1.05, fontWeight: 900, letterSpacing: -1.8,   whiteSpace: "nowrap" },
   subtitle: { maxWidth: 640, margin: "20px 0 0", color: "#6f6244", fontSize: 17, lineHeight: 1.7 },
   filters: { position: "relative", zIndex: 2, maxWidth: 1320, margin: "0 auto 32px", display: "flex", gap: 10, flexWrap: "wrap" },
   filterButton: { height: 42, border: "1px solid rgba(101,116,71,.2)", borderRadius: 99, padding: "0 18px", fontWeight: 900, cursor: "pointer" },

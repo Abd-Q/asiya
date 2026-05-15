@@ -5,21 +5,21 @@
 
 const SHOW_DECOR = true;
 
-const FLOWER_IMAGE = "/assets/product-2.png";
-const LEAF_IMAGE = "/assets/product-1.png";
-const MIX_IMAGE = "/assets/product-3.png";
-const LAVENDER_IMAGE = "/assets/product-4.png";
+const FLOWER_IMAGE = "/assets/source/product-3.svg";
+const LEAF_IMAGE = "/assets/source/product-1.svg";
+const MIX_IMAGE = "/assets/source/product-4.svg";
+const LAVENDER_IMAGE = "/assets/source/product-2.svg";
 
 const HERO_FLOWERS = [
   { image: LEAF_IMAGE, top: 30, left: -80, width: 260, opacity: 0.18, rotate: -18 },
-  { image: FLOWER_IMAGE, top: 80, right: -70, width: 230, opacity: 0.24, rotate: 18 },
+  { image: FLOWER_IMAGE, top: 80, right: -70, width: 230, opacity: 0.24, rotate: 180 },
   { image: LAVENDER_IMAGE, bottom: 20, left: 420, width: 150, opacity: 0.32, rotate: -6 },
 ];
 
 const LIGHT_SECTION_FLOWERS = [
-  { image: FLOWER_IMAGE, top: -50, left: -50, width: 190, opacity: 0.24, rotate: -12 },
-  { image: LEAF_IMAGE, bottom: -80, right: -60, width: 280, opacity: 0.2, rotate: 20 },
-  { image: LAVENDER_IMAGE, top: 90, right: 90, width: 120, opacity: 0.24, rotate: 8 },
+  { image: FLOWER_IMAGE, top: 180, left: 10, width: 420, opacity: 0.24, rotate: -12  },
+  { image: LEAF_IMAGE, bottom: -80, right: -90, width: 650, opacity: 0.2, rotate: -25},
+  { image: LAVENDER_IMAGE, top: 900, right: 90, width: 120, opacity: 0.24, rotate: 8 },
 ];
 
 const DARK_SECTION_FLOWERS = [
@@ -35,8 +35,8 @@ const CATALOG_FLOWERS = [
 ];
 
 const FOOTER_FLOWERS = [
-  { image: MIX_IMAGE, top: -130, right: -80, width: 420, opacity: 0.1, rotate: 12 },
-  { image: LEAF_IMAGE, bottom: -90, left: -70, width: 320, opacity: 0.12, rotate: -12 },
+  { image: MIX_IMAGE, top: 25, right: -80, width: 420, opacity: 0.1, rotate: 12 },
+  { image: MIX_IMAGE, bottom: 180, left: -70, width: 320, opacity: 0.12, rotate: -12 },
 ];
 
 type Variant = "hero" | "light" | "dark" | "catalog" | "footer";

@@ -46,7 +46,7 @@ export default function ProductPage() {
         </div>
       </div>
 
-      <div style={styles.relatedHeader}><h2 style={styles.relatedTitle}>{t.product.related}</h2></div>
+
       <div style={{ ...styles.relatedGrid, gridTemplateColumns: `repeat(${RELATED_COLUMNS}, 1fr)`, gap: RELATED_GAP }}>
         {relatedProducts.map((p) => <ProductCard key={p.id} product={p} />)}
       </div>

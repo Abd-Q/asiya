@@ -62,7 +62,7 @@ const ru = {
   about: {
     title: "О бренде",
     tagline: "Наша история",
-    hero_title: "История и наследие",
+    hero_title: "Красота и наследие Центральной Азии",
     section_tag: "О бренде",
     section_title_1: "Красота и наследие",
     section_title_2: "Центральной Азии",
@@ -84,10 +84,10 @@ const ru = {
     ],
   },
   why: {
-    title: "Почему нас выбирают",
+    title: "Преимущества ",
     tagline: "Преимущества",
-    hero_title: "Почему нас выбирают?",
-    section_tag: "Преимущества",
+    hero_title: "Преимущества",
+    section_tag: "",
     section_title: "Почему нас выбирают?",
     reasons: [
       { title: "Культурное наследие", desc: "Национальная гордость в каждом продукте" },

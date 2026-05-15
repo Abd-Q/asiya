@@ -3,9 +3,10 @@ import { useRouter } from "../context/RouterContext";
 import HeroSection from "../components/HeroSection";
 import FlowerDecor from "../components/FlowerDecor";
 import { PRODUCT_IMAGE } from "../data/products";
+import { useState } from "react";
 
 // МЕНЯЙ ТУТ — ГЛАВНАЯ
-const GIFT_IMAGE = PRODUCT_IMAGE(13);
+const GIFT_IMAGES = [PRODUCT_IMAGE(13), PRODUCT_IMAGE(12)];
 const GIFT_IMAGE_WIDTH = 500;
 const NEWS_CARD_HEIGHT = 330;
 const SECTION_PADDING = "82px 28px";
@@ -18,6 +19,15 @@ const NEWS_IMAGES = [PRODUCT_IMAGE(0), PRODUCT_IMAGE(2), PRODUCT_IMAGE(10)];
 export default function HomePage() {
   const { t } = useI18n();
   const { navigate } = useRouter();
+  const [giftIndex, setGiftIndex] = useState(0);
+
+  const nextGift = () => {
+    setGiftIndex((prev) => (prev + 1) % GIFT_IMAGES.length);
+  };
+
+  const prevGift = () => {
+    setGiftIndex((prev) => (prev - 1 + GIFT_IMAGES.length) % GIFT_IMAGES.length);
+  };
 
   return (
     <>
@@ -38,22 +48,27 @@ export default function HomePage() {
 
           <div style={styles.giftImageBox}>
             <span style={styles.newBadge}>{t.catalog.tag_new}</span>
-            <img src={GIFT_IMAGE} alt="Gift set" style={{ width: GIFT_IMAGE_WIDTH }} />
+            <img
+                  src={GIFT_IMAGES[giftIndex]}
+                  alt="Gift set"
+                  style={{ width: GIFT_IMAGE_WIDTH }}
+              />
+            <button type="button" onClick={prevGift} style={styles.sliderPrev}>‹</button>
+              <button type="button" onClick={nextGift} style={styles.sliderNext}>›</button>
           </div>
         </div>
       </section>
 
-      <section style={{ ...styles.section, padding: SECTION_PADDING, background: DARK_BG, color: "#fffaf0" }}>
-        <FlowerDecor variant="dark" />
+      <section style={{...styles.section, padding: SECTION_PADDING, background: DARK_BG, color: "#fffaf0"}}>
+        <FlowerDecor variant="dark"/>
         <div style={styles.centerTitle}>
-          <p style={{ ...styles.tag, color: "#d7b978" }}>{t.news.tagline}</p>
+          <p style={{...styles.tag, color: "#d7b978"}}>{t.news.tagline}</p>
           <h2 style={{ ...styles.title, color: "#fffaf0" }}>{t.news.title}</h2>
         </div>
 
         <div style={styles.newsGrid}>
           {t.news.articles.slice(0, 3).map((news: any, index: number) => (
             <article key={index} style={{ ...styles.newsCard, minHeight: NEWS_CARD_HEIGHT }}>
-              <div style={styles.newsImage}><img src={NEWS_IMAGES[index]} alt="" style={styles.newsImg} /></div>
               <p style={styles.newsMeta}>{news.src} · {news.date}</p>
               <h3 style={styles.newsTitle}>{news.title}</h3>
               <p style={styles.newsText}>{news.excerpt}</p>
@@ -102,4 +117,37 @@ const styles: Record<string, React.CSSProperties> = {
   newsletter: { position: "relative", zIndex: 2, maxWidth: 980, margin: "0 auto", padding: 50, borderRadius: 36, background: "#fffaf0", textAlign: "center", boxShadow: "0 24px 70px rgba(45,51,38,.10)" },
   newsletterForm: { margin: "30px auto 0", maxWidth: 620, display: "flex", gap: 10, background: "#f6efde", borderRadius: 99, padding: 8 },
   emailInput: { flex: 1, border: 0, outline: 0, background: "transparent", padding: "0 18px", fontSize: 14 },
+  sliderPrev: {
+    position: "absolute",
+    left: 18,
+    top: "50%",
+    transform: "translateY(-50%)",
+    width: 42,
+    height: 42,
+    borderRadius: "50%",
+    border: 0,
+    background: "rgba(37,48,31,.18)",
+    color: "#25301f",
+    fontSize: 34,
+    lineHeight: "38px",
+    cursor: "pointer",
+    zIndex: 5,
+  },
+
+  sliderNext: {
+    position: "absolute",
+    right: 18,
+    top: "50%",
+    transform: "translateY(-50%)",
+    width: 42,
+    height: 42,
+    borderRadius: "50%",
+    border: 0,
+    background: "rgba(37,48,31,.18)",
+    color: "#25301f",
+    fontSize: 34,
+    lineHeight: "38px",
+    cursor: "pointer",
+    zIndex: 5,
+  },
 };

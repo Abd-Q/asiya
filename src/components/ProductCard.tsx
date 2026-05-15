@@ -29,7 +29,7 @@ export default function ProductCard({ product }: { product: Product }) {
     <article style={{ ...styles.card, width: CARD_WIDTH, minHeight: CARD_MIN_HEIGHT, padding: CARD_PADDING, borderRadius: CARD_RADIUS, background: CARD_BG, border: CARD_BORDER }} onClick={() => navigate("product", { productId: product.id })}>
       {tagText && <span style={styles.tag}>{tagText}</span>}
 
-      <img src={CARD_FLOWER_IMAGE} alt="" style={{ ...styles.cardFlower, width: CARD_FLOWER_WIDTH }} />
+
 
       <div style={styles.imageBox}>
         <img src={product.image} alt={productName} style={{ ...styles.image, height: IMAGE_HEIGHT }} />

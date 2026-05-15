@@ -5,7 +5,7 @@ import { useRouter } from "../context/RouterContext";
 
 // МЕНЯЙ ТУТ — NEWS
 const PAGE_BG = "#fffaf0";
-const SECTION_PADDING = "86px 28px";
+const SECTION_PADDING = "20px 28px";
 const CARD_HEIGHT = 360;
 // ВАЖНО: картинки новостей берутся только из product images.
 const NEWS_IMAGES = [PRODUCT_IMAGE(0), PRODUCT_IMAGE(2), PRODUCT_IMAGE(10)];
@@ -18,7 +18,7 @@ export default function NewsPage() {
     <section style={{ ...styles.page, background: PAGE_BG, padding: SECTION_PADDING }}>
       <FlowerDecor variant="light" />
       <div style={styles.header}>
-        <p style={styles.tag}>{t.news.tagline}</p>
+
         <h1 style={styles.title}>{t.news.hero_title}</h1>
         <p style={styles.subtitle}>{t.news.subtitle}</p>
       </div>
@@ -26,9 +26,6 @@ export default function NewsPage() {
       <div style={styles.grid}>
         {t.news.articles.map((news: any, index: number) => (
           <article key={news.title} style={{ ...styles.card, minHeight: CARD_HEIGHT }}>
-            <button style={styles.imageButton} onClick={() => navigate("newsDetail", { newsId: index })}>
-              <img src={NEWS_IMAGES[index] || NEWS_IMAGES[0]} alt="" style={styles.newsImg} />
-            </button>
             <p style={styles.meta}>{news.src} · {news.date}</p>
             <h3 style={styles.cardTitle}>{news.title}</h3>
             <p style={styles.cardText}>{news.excerpt}</p>

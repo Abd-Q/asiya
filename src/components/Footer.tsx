@@ -5,7 +5,7 @@ import FlowerDecor from "./FlowerDecor";
 
 // МЕНЯЙ ТУТ
 const FOOTER_LOGO = "/assets/source/logo-main.png";
-const FOOTER_BG = "#3b2416";
+const FOOTER_BG = "#733d11";
 const FOOTER_TEXT = "#fff7e8";
 const FOOTER_PADDING = "80px 28px 28px";
 
@@ -123,7 +123,7 @@ const styles: Record<string, React.CSSProperties> = {
   tag: {
     fontSize: 12,
     letterSpacing: 2,
-    color: "#d7b978",
+    color: "#F1D1B1",
     marginBottom: 10,
   },
 
@@ -167,7 +167,7 @@ const styles: Record<string, React.CSSProperties> = {
     marginTop: 20,
     padding: "12px 24px",
     borderRadius: 999,
-    background: "#d7b978",
+    background: "#F1D1B1",
     color: "#27311f",
     fontWeight: 700,
   },
@@ -195,7 +195,7 @@ const styles: Record<string, React.CSSProperties> = {
     padding: "14px 24px",
     borderRadius: 999,
     border: "none",
-    background: "#d7b978",
+    background: "#F1D1B1",
     color: "#27311f",
     fontWeight: 700,
     cursor: "pointer",
@@ -209,7 +209,7 @@ const styles: Record<string, React.CSSProperties> = {
 
   columnTitle: {
     marginBottom: 12,
-    color: "#d7b978",
+    color: "#F1D1B1",
     fontSize: 14,
   },
 
