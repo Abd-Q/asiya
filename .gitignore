@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+
+# Backend runtime
+server/db/*.db
+server/db/*.db-journal
+server/db/*.db-wal
+server/db/*.db-shm
+server/uploads/*
+!server/uploads/.gitkeep
+
+# Env
+.env
+.env.local
